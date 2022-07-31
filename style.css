@@ -1,61 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;700&display=swap');
+
 /* Reset Styles */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Base Styles */
-:root {
-    box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: border-box;
+  margin: 0;
+	padding: 0;
 }
 
 html {
@@ -65,8 +20,51 @@ html {
     --medium-orange: hsl(39, 100%, 50%);
 }
 
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.dropbtn{
+  background-color: #fff;
+  width: 150px;
+  border-radius: 5px 5px 0 0;
+  padding: 7px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 5% auto;
+}
+
 body {
-   font-family: Helvetica, Arial, sans-serif;
+   font-family:'Overpass', sans-serif;
+   text-align: center;
    font-size: calc(0.3rem + 1vw);
    color: var(--font-col);
    font-weight: normal; 
@@ -79,21 +77,9 @@ header {
     margin-top: 1.5em;
 }
 
-h2 {
-    font-weight: 700;
-    text-align: center;
-    text-transform: capitalize;
-}
-
 .container {
-    width: 90%;
+    width: 70%;
     min-width: 15em;
-    margin: 0 auto;
-}
-
-/* Input Styles */
-form {
-    width: 100%;
     margin: 0 auto;
 }
 
@@ -102,8 +88,9 @@ input {
     font-size: calc(0.3rem + 1vw);
     letter-spacing: -0.05em;
     width: 100%;
-    padding: 0.5em 1em;
+    padding: 0.7em 1em;
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
     border: 1px solid var(--font-col);
     border-radius: 0.5em;
 }
@@ -112,18 +99,70 @@ input:focus {
     outline: 0.2em solid var(--medium-orange);
 }
 
-@media (min-width: 45em) {
-    .container {
-        width: 70%;
-    }
-} 
 
-@media (min-width: 67.5em) {
-    .container {
-        width: 50%;
-    }
-
-    input {
-        font-size: calc(0.3rem + 0.7vw);
-    }
+button{
+  height:40px;
+  width: 30%;
+  background-color:var(--light-blue);
+  border:1px solid var(--light-blue);
+  border-radius: 5px;
+  font-size: 0.8em;
 }
+
+.button-div{
+  display: flex;
+  justify-content: center;
+  width: 65%;
+  margin: 1.5em auto;
+  gap: 10px;
+}
+
+button:hover, a:hover{
+  background-color: #495f82;
+  color: #fff;
+  border: none;
+  transition: background-color 0.9s ease;
+  scale:2;
+}
+
+
+/* Responsiveness starts here  */
+@media (max-width: 768px) {
+
+  body{
+  font-size: 0.8em;  
+  }
+  
+  main{
+    margin: 30% auto;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #000;
+    padding: 30px 0;
+  }
+  
+  .container {
+    width: 80%;
+  }
+
+  input{
+    height: 50px;
+  }
+
+  ::placeholder{
+    font-size: 1.4em;
+  }
+
+  .button-div{
+    display: grid;
+    justify-content: unset;
+    width: 65%;
+  }
+
+  button{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+  }
+} 

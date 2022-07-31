@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" />
+  <title>Redactr</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <header>
-        <h2 class="container">make some magic here!!</h2>
-    </header>
+
+  <nav>
+    <section>
+      <p>Circle 189</p>
+    </section>
+
+    <section class="dropdown">
+      <button class="dropbtn">Explore Members</button>
+      <div class="dropdown-content">
+        <a href="#">Isaac</a>
+        <a href="#">Joseph</a>
+        <a href="#">Esther</a>
+        <a href="#">Olajumoke</a>
+        <a href="#">Oludamola</a>
+        <a href="#">Raphael</a>
+        <a href="#">Tolulope</a>
+      </div>
+    </section>
+  </nav>
+
+  <main>
+
+    <section class="main-header">
+      <h1>Redactr Application</h1>
+      <p>Edit Text &#8226; No Login Needed </p>
+    </section>
 
     <form class="container">
-        <label for="user-text">
-            <input type="text" name="user-text" id="user-text" placeholder="Enter your text here">
-        </label>        
+      <label for="user-text">
+        <input type="text" name="user-text" id="user-text" placeholder="Enter your text here">
+      </label>
+      <!-- Second input field for redacted words -->
+
+      <label for="redact-text">
+        <input type="text" name="redact-text" id="redact-text" placeholder="Enter text to be redacted here" required>
+      </label>
     </form>
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
-    <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+
+    <!--   Section for Redactr buttons -->
+    <section class='button-div'>
+      <button class="redact-hyphen">Redact with ---</button>
+      <button class="redact-dash">Redact with ***</button>
+      <button class="redact-question">Redact with ???</button>
+    </section>
+
+  </main>
+
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="index.mjs" type="module"></script>
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
+
 </html>
